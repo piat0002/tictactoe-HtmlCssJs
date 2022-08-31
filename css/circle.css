@@ -1,0 +1,13 @@
+.icone-circle path{
+    stroke:#0000FF;
+}
+.icone-circle path:nth-child(1) {
+    stroke-dasharray: 2333px;
+    stroke-dashoffset: 2333px;
+    animation: anim 7s ease forwards;
+}
+@keyframes anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

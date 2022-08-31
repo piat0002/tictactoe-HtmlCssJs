@@ -183,7 +183,7 @@ function generateAfficheTableau() {
 
         str += '<tr>'
         for (let j = 0; j < tableau[i].length; j++) {
-            str += `<td onclick="${typeMatch}(${cases(j,i)})"><div class="c">L</div></td>`
+            str += `<td onclick="${typeMatch}(${cases(j,i)})"><div class="c"> <svg  xmlns="http://www.w3.org/2000/svg" aria-describedby=""class="icone" height="100" width="100" viewBox="0 0 100 100" fill="none" > </svg></div></td>`
         }
         elementhtmltableau.innerHTML = str + "</tr>"
     }
@@ -196,7 +196,17 @@ function generateAfficheTableau() {
  */
 function ModifierAffichageCase(casse){
     let coord = coordonnee(casse)
-    elementhtmltableau.children[coord[0]].children[coord[1]].innerHTML = `${joueur < 1 ? '<div class="c" style="color: red">X</div>' : '<div class="c" style="color: blue">O</div>'}`
+    elementhtmltableau.children[coord[0]].children[coord[1]].innerHTML = joueur < 1 ? 
+    ` 
+    <svg  xmlns="http://www.w3.org/2000/svg" aria-describedby=""class="icone-croix" height="100" width="100" viewBox="0 0 100 100" fill="none" > 
+    <path stroke-linecap="round" stroke-linejoin="round" d="M 10,10  90,90 Z" stroke="#990099" stroke-width="15"/>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M  10,90 90,10 Z" stroke="#990099" stroke-width="15" />
+</svg>
+` : 
+`<svg  xmlns="http://www.w3.org/2000/svg" aria-describedby=""class="icone-circle" height="100" width="100" viewBox="0 0 100 100" fill="none"> 
+<path d="M 50 50 m -40, 0 a 40,40 0 1,0 80,0 a 40,40 0 1,0 -80,0"
+ stroke="#990099" stroke-width="15"/>
+</svg>`
 }
 
 /**
@@ -216,6 +226,8 @@ function reset() {
         tableau.push(liste)
     }
     generateAfficheTableau()
+
+    
 }
 
 /**
@@ -304,7 +316,7 @@ function jeujce(casse) {
             affichageEgalite()
             reset()
         }else{
-            robot()
+            setTimeout(robot(),5000)
         }
     }
 }
@@ -333,4 +345,5 @@ function jeujcj(casse) {
     } 
 }
 
- 
+
+selectjeu('jeujce')
