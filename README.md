@@ -12,5 +12,12 @@ https://tictactoeyoyo.herokuapp.com
 
 ## Structure
 
-Un simple page en html css et js.
+Une simple page en html css et js.
 
+## Installation
+
+Aucune installation n'est requise, simplement ouvrir la page web.
+
+## Jouer
+
+Cliquez sur les cases pour jouer contre l'ordinateur.
