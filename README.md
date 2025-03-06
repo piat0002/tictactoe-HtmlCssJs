@@ -4,7 +4,8 @@ Simple jeu fait en html, css et js, sans framework.
 
 ## demo 
 
-https://tictactoeyoyo.herokuapp.com
+https://piat0002.github.io/tictactoe/
+
 
 ## capture d'ecran
 
